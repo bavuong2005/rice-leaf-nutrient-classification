@@ -5,12 +5,15 @@
 ![CV](https://img.shields.io/badge/Computer_Vision-Image_Classification-success)
 
 ## 📌 Overview
-A deep learning-based classification system designed to identify nutrient deficiencies (Nitrogen - N, Phosphorus - P, Potassium - K) in rice leaves. This project benchmarks state-of-the-art (SOTA) CNN architectures (MobileNetV3, EfficientNet) against a custom, lightweight **MiniXception + ECA (Efficient Channel Attention)** model optimized for edge device deployment in smart agriculture.
+A deep learning-based classification system designed to identify nutrient deficiencies (Nitrogen - N, Phosphorus - P, Potassium - K) in rice leaves. This project benchmarks state-of-the-art (SOTA) CNN architectures (MobileNetV3, EfficientNet) against a custom, lightweight **MiniXception** model. It also explores integrating an **Efficient Channel Attention (ECA)** module, optimizing the architecture for edge device deployment in smart agriculture.
 
 ## 🖼️ Visual Demo
-*(**Note for you:** Thay link bên dưới bằng link ảnh thực tế bạn tải lên thư mục của github)*
-![Model Architecture & Predictions](link_to_your_image_here.png) 
-*Caption: Custom MiniXception architecture and sample predictions.*
+
+* **Nutrient Deficiency Classes (N, P, K):**
+  ![Sample Dataset](images/sample_dataset.jpg)
+
+* **Proposed MiniXception Architecture:**
+  ![MiniXception Architecture](images/minixception.png)
 
 ## 📊 Dataset
 The project utilizes the **"Nutrient-Deficiency-Symptoms-in-Rice"** dataset.
@@ -23,13 +26,13 @@ The project utilizes the **"Nutrient-Deficiency-Symptoms-in-Rice"** dataset.
 
 ## ⚙️ Methodology & Tech Stack
 * **Framework:** PyTorch.
-* **Preprocessing:** Images resized to `1024x256` (4:1 aspect ratio to match leaf morphology), ImageNet normalization, and robust data augmentation (Horizontal Flip, Rotation ±20°, Affine transformations) to mitigate overfitting.
+* **Preprocessing:** Images resized to `1024x256` (4:1 aspect ratio to match leaf morphology), ImageNet normalization, and robust data augmentation (Horizontal Flip, Rotation ±20°, Affine transformations) applied strictly to the training set to mitigate overfitting.
 * **Architectures Evaluated:**
   * **Transfer Learning Baselines:** MobileNetV3-Large, EfficientNet-B0, and original Xception.
   * **Custom Edge Model:** Designed a **MiniXception** network using Depthwise Separable Convolutions to drastically reduce parameters. Integrated an **Efficient Channel Attention (ECA)** module to focus learning weights on pathological regions (e.g., yellowing, brown spots) with a negligible cost of ~2K additional parameters.
 
 ## 📈 Results & Benchmarking
-All models were rigorously evaluated using **Stratified 5-Fold Cross-Validation**:
+All models were rigorously evaluated using **Stratified 5-Fold Cross-Validation**.
 
 | Model | Parameters (M) | Average Accuracy (%) | Train Time (1 Epoch) |
 | :--- | :---: | :---: | :---: |
@@ -37,12 +40,12 @@ All models were rigorously evaluated using **Stratified 5-Fold Cross-Validation*
 | EfficientNet-B0 | 4.01 | 95.69 | 17.87s |
 | MiniXception (Custom Base) | 1.24 | 95.34 | 20.40s |
 | Xception (Original) | 20.81 | 95.00 | 19.84s |
-| **MiniXception + ECA (Ours)** | **1.24** | 94.83 | 21.34s |
+| **MiniXception + ECA** | **1.24** | 94.83 | 21.34s |
 
 > **💡 Key Insights:**
 > * While **MobileNetV3-Large** achieved the highest accuracy, our custom **MiniXception variants** demonstrated immense potential for **Edge AI**. 
-> * By maintaining a highly competitive accuracy (~95%) while being **nearly 4x smaller** than SOTA models (1.24M vs 4.21M params), the custom model is highly suitable for deployment on low-resource mobile devices.
-> * *Challenge:* Confusion matrices indicated occasional misclassification between Phosphorus (P) and Potassium (K) classes due to overlapping necrotic symptoms in severe stages.
+> * By maintaining a highly competitive accuracy (~95%) while being **nearly 4x smaller** than SOTA models (1.24M vs 4.21M params), the custom MiniXception base model is highly suitable for deployment on low-resource mobile devices.
+> * *Challenge:* Analysis of wrong predictions indicated occasional misclassification between Phosphorus (P) and Potassium (K) classes due to overlapping necrotic symptoms (e.g., leaf margin burning) in severe stages.
 
 ## 🚀 Installation & Usage
 The project is organized into standalone Jupyter Notebooks for clarity and reproducibility.
@@ -78,7 +81,7 @@ rice-leaf-nutrient-classification/
 ```
 
 ## 🔮 Future Work
-* **Mobile Deployment:** Port the optimal lightweight model (MiniXception) to an Android/iOS application for real-time field diagnosis.
+* **Mobile Deployment:** Port the optimal lightweight model (MiniXception or MobileNetV3) to an Android/iOS application for real-time field diagnosis.
 * **Object Detection:** Transition from image classification to Object Detection (e.g., YOLO) to precisely localize necrotic lesions on leaves.
 * **Data Diversity:** Collect a broader range of field data under varying lighting conditions to resolve the P vs. K classification bottleneck.
 ```
