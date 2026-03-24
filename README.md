@@ -52,7 +52,7 @@ The project is organized into standalone Jupyter Notebooks for clarity and repro
 
 **1. Clone the repository**
 ```bash
-git clone [https://github.com/bavuong2005/rice-leaf-nutrient-classification.git](https://github.com/bavuong2005/rice-leaf-nutrient-classification.git)
+git clone https://github.com/bavuong2005/rice-leaf-nutrient-classification.git
 cd rice-leaf-nutrient-classification
 ```
 
@@ -70,14 +70,17 @@ jupyter notebook
 ```text
 rice-leaf-nutrient-classification/
 │
+├── images/                              # Visual assets for documentation
+│   ├── sample_dataset.jpg
+│   └── minixception.png
+│
 ├── 01_MiniXception.ipynb                # Training & Evaluation: Custom MiniXception
 ├── 02_MiniXception_ECA_Attention.ipynb  # Training & Evaluation: MiniXception + ECA
 ├── 03_Xception_Original.ipynb           # Baseline: Original Xception
 ├── 04_MobileNetV3_Large.ipynb           # Baseline: MobileNetV3-Large
 ├── 05_EfficientNet_B0.ipynb             # Baseline: EfficientNet-B0
 │
-├── README.md                            # Project documentation
-└── requirements.txt                     # Dependencies
+└──  README.md                            # Project documentation
 ```
 
 ## 🔮 Future Work
