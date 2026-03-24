@@ -82,7 +82,3 @@ rice-leaf-nutrient-classification/
 * **Object Detection:** Transition from image classification to Object Detection (e.g., YOLO) to precisely localize necrotic lesions on leaves.
 * **Data Diversity:** Collect a broader range of field data under varying lighting conditions to resolve the P vs. K classification bottleneck.
 ```
-
-Bạn chỉ cần chụp một tấm ảnh có biểu đồ kiến trúc của bạn hoặc ảnh 3 cái lá (N, P, K) ghép lại, up lên github và chèn link vào phần `## 🖼️ Visual Demo` là repo này sẽ chuẩn 10 điểm. 
-
-Bạn có muốn mình tạo luôn cấu trúc file README tương tự cho dự án chatbot **RoadLawQA** của bạn không?
