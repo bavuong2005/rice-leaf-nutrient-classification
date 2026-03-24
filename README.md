@@ -10,7 +10,7 @@ A deep learning-based classification system designed to identify nutrient defici
 ## 🖼️ Visual Demo
 
 * **Nutrient Deficiency Classes (N, P, K):**
-  ![Sample Dataset](images/sample_dataset.jpg)
+  ![Sample Dataset](images/sample_dataset.png)
 
 * **Proposed MiniXception Architecture:**
   ![MiniXception Architecture](images/minixception.png)
@@ -22,7 +22,7 @@ The project utilizes the **"Nutrient-Deficiency-Symptoms-in-Rice"** dataset.
   * **Nitrogen (N):** 440 images (~38.1%) - *Symptoms: Yellowing of leaves.*
   * **Phosphorus (P):** 333 images (~28.8%) - *Symptoms: Purplish-red hues at the leaf base.*
   * **Potassium (K):** 383 images (~33.1%) - *Symptoms: Yellow-brown spots / necrotic leaf margins.*
-* **Source:** [Kaggle Dataset](https://www.kaggle.com/datasets/weeraphatraksarikon/nutrient-deficiency-symptoms-in-rice)
+* **Source:** [Kaggle Dataset](https://www.kaggle.com/datasets/guy007/nutrientdeficiencysymptomsinrice)
 
 ## ⚙️ Methodology & Tech Stack
 * **Framework:** PyTorch.
