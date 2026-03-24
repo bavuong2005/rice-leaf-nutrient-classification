@@ -71,7 +71,7 @@ jupyter notebook
 rice-leaf-nutrient-classification/
 │
 ├── images/                              # Visual assets for documentation
-│   ├── sample_dataset.jpg
+│   ├── sample_dataset.png
 │   └── minixception.png
 │
 ├── 01_MiniXception.ipynb                # Training & Evaluation: Custom MiniXception
