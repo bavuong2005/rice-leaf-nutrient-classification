@@ -87,4 +87,3 @@ rice-leaf-nutrient-classification/
 * **Mobile Deployment:** Port the optimal lightweight model (MiniXception or MobileNetV3) to an Android/iOS application for real-time field diagnosis.
 * **Object Detection:** Transition from image classification to Object Detection (e.g., YOLO) to precisely localize necrotic lesions on leaves.
 * **Data Diversity:** Collect a broader range of field data under varying lighting conditions to resolve the P vs. K classification bottleneck.
-```
